@@ -1,0 +1,4 @@
+.env
+*/*.pyc
+caching_service.db
+Pipfile
