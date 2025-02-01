@@ -121,7 +121,7 @@ Testing
 To run the test suite, use the following command:
 
 ```
-pytest test_main.py -v
+pytest test_utils.py test_models.py test_main.py -v
 ```
 
 Project Structure
