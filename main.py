@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from typing import List
 import uuid
 import logging
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configure logging
 logging.basicConfig(
@@ -24,7 +25,15 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Caching Microservice",lifespan=lifespan)
 
+# Enable in production
 
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["https://yourdomain.com"],
+#     allow_credentials=True,
+#     allow_methods=["GET", "POST"],
+#     allow_headers=["*"],
+# )
 
 class PayloadRequest(BaseModel):
     list_1: List[str]
